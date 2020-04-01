@@ -4,17 +4,17 @@ This is a simple server. currently it replies to all requests with a simple stri
 
 ## Installation
 
-Download from http://example.com/FIXME.
+
 
 ## Usage
 
-FIXME: explanation
+To run locally
 
-    $ java -jar echo-server-0.1.0-standalone.jar [args]
+    $ java -jar echo-server-0.1.0-standalone.jar [port]
 
 ## Options
 
-FIXME: listing of options this app accepts.
+
 
 ## Examples
 
