@@ -1,6 +1,6 @@
-(ns echo-server.core-test
+(ns echo_server.core-test
   (:require [clojure.test :refer :all]
-            [echo-server.core :refer :all]))
+            [echo_server.core :refer :all]))
 
 (deftest a-test
   (testing "one equals one"

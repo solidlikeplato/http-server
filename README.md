@@ -1,36 +1,44 @@
 # echo-server
 
-This is a simple server. currently it replies to all requests with a simple string of "hello world!"
+This is a simple server. Final functionality will be to reply to a http request with a http response containing the same body as the request.
+Currently it replies to all http requests with a http response with the body containing the string "hello world!"
 
 ## Installation
-
+To install locally, you must have [Leiningen](https://leiningen.org/) and [Java](https://www.java.com/en/download/) installed
 
 
 ## Usage
+To run the server on the local machine you can use
 
-To run locally
+`lein run`
 
-    $ java -jar echo-server-0.1.0-standalone.jar [port]
+to run directly
 
-## Options
+or you can compile into an uberjar using
 
+`lein uberjar`
 
+The uberjar command creates 2 uberjars, in the `/target` directory the `standalone` uberjar is suitable for deployment and includes all needed dependincies
 
-## Examples
+## Deployment
+Currently set up to use Heroku for deployment.
+#### Deployment Dependencies
+To deploy to Heroku, Heroku CLI tools should be installed and the repo should have a second remote named heroku linked to a Heroku app.
+1. commit all changes
+2. `lein uberjar`
+3. commit the repository to the heroku remote by 
 
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+    `git add .`
+    
+    `git commit -m 'update uberjar to latest version'`
+    
+    `git push heroku master` if on master branch, or if on another branch
+    
+    `git push heroku branch-name-here:master`
 
 ## License
 
-Copyright © 2020 FIXME
+Copyright © 2020
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
