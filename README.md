@@ -30,7 +30,7 @@ To deploy to Heroku, Heroku CLI tools should be installed and the repo should ha
 
     `git add .`
     
-    `git commit -m 'add latest version'`
+    `git commit -m 'update uberjar to latest version'`
     
     `git push heroku master` if on master branch, or if on another branch
     
