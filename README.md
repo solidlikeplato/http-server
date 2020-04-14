@@ -20,6 +20,22 @@ or you can compile into an uberjar using
 
 The uberjar command creates 2 uberjars, in the `/target` directory the `standalone` uberjar is suitable for deployment and includes all needed dependincies
 
+## Deployment
+Currently set up to use Heroku for deployment.
+#### Deployment Dependencies
+To deploy to Heroku, Heroku CLI tools should be installed and the repo should have a second remote named heroku linked to a Heroku app.
+1. commit all changes
+2. `lein uberjar`
+3. commit the repository to the heroku remote by 
+
+    `git add .`
+    
+    `git commit -m 'add latest version'`
+    
+    `git push heroku master` if on master branch, or if on another branch
+    
+    `git push heroku branch-name-here:master`
+
 ## License
 
 Copyright © 2020
