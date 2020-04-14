@@ -10,7 +10,7 @@
     (. writer write line 0 (count line))))
 
 (defn write-hello-world [out]
-    (sock-write out (str "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:14\r\n\r\nhello world!"))
+    (sock-write out (str "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:14\r\n\r\nhello world!!!"))
     (.flush out))
 
 (defn server [port action]
