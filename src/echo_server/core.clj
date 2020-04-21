@@ -5,6 +5,9 @@
 
 (require '[clojure.string :as str])
 
+(defn socket-read [reader]
+  (. reader readLine))
+
 (defn write-hello-world []
     (println "hello world!"))
 
