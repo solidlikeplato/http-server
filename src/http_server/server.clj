@@ -8,7 +8,9 @@
   (let [client-socket (. socket accept)
         in (BufferedReader. (InputStreamReader. (.getInputStream client-socket)))
         out (BufferedWriter. (OutputStreamWriter. (.getOutputStream client-socket)))]
-      ; (make-response in out)
+      ; (with-open [reader in
+      ;             writer out]
+      ;   (make-response in out))
     (.close client-socket)))
 
 
@@ -16,4 +18,5 @@
   (let [socket (ServerSocket. port)]
     (loop []
       (respond-to-request socket)
-      (recur))))
+      (recur))
+      (.close socket)))
