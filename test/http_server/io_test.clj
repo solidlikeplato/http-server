@@ -1,6 +1,6 @@
-(ns echo_server.core-test
+(ns http_server.io-test
   (:require [clojure.test :refer :all]
-            [echo_server.core :refer :all])
+            [http_server.io :refer :all])
   (:import (java.io ByteArrayOutputStream BufferedWriter OutputStreamWriter ByteArrayInputStream BufferedReader InputStreamReader)))
 
 (deftest reader-test

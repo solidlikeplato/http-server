@@ -1,6 +1,6 @@
-(ns echo_server.headers-test
+(ns http_server.headers-test
   (:require [clojure.test :refer :all]
-            [echo_server.headers :refer :all])
+            [http_server.headers :refer :all])
   (:import))
 
 (deftest response-header-test 
