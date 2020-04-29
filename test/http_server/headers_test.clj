@@ -1,7 +1,6 @@
-(ns http_server.headers-test
+(ns http_server.headers_test
   (:require [clojure.test :refer :all]
-            [http_server.headers :refer :all])
-  (:import))
+            [http_server.headers :refer :all]))
 
 (deftest response-header-test 
   (testing "generates http response header"
@@ -11,4 +10,3 @@
                       "\r\n\r\n")]
                       
       (is (= header (generate-response-header body))))))
-

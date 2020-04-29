@@ -1,4 +1,4 @@
-(ns http_server.io-test
+(ns http_server.io_test
   (:require [clojure.test :refer :all]
             [http_server.io :refer :all])
   (:import (java.io ByteArrayOutputStream BufferedWriter OutputStreamWriter ByteArrayInputStream BufferedReader InputStreamReader)))
@@ -44,3 +44,4 @@
         (socket-write writer message2))
 
       (is (= (str message message2) (.toString output))))))
+      

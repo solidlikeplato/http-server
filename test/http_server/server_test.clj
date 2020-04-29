@@ -1,4 +1,4 @@
-(ns http_server.server-test
+(ns http_server.server_test
   (:require [clojure.test :refer :all]
             [http_server.server :refer :all])
   (:import (java.io InputStreamReader BufferedReader BufferedWriter OutputStreamWriter)
