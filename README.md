@@ -1,16 +1,16 @@
-# echo-server
+# HTTP-server
 
-This is a simple server. Final functionality will be to reply to a http request with a http response containing the same body as the request.
-Currently it replies to all http requests with a http response with the body containing the string "hello world!"
+This is a simple server.
+Currently it replies to all http requests with a http response with an empty body
 
 ## Installation
 To install locally, you must have [Leiningen](https://leiningen.org/) and [Java](https://www.java.com/en/download/) installed
 
 
 ## Usage
-To run the server on the local machine you can use
+Assuming you wish to run on port 5000 to run the server on the local machine you can use
 
-`lein run`
+`lein run 5000`
 
 to run directly
 
