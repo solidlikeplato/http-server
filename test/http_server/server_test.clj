@@ -11,16 +11,16 @@
         failedTest true]
     
     (if (and (< time-elapsed time-limit) failedTest)
-      (let [increment 1 ;how long to sleep before retrying test
+      (let [increment 1
             retry (try
-                    (test) false ;if the test passes you shouldn't retry
+                    (test) false
                   (catch
-                    Exception e true) ;if the test raises an exception you should retry
+                    Exception e true)
                   (finally
                     (Thread/sleep increment)))]
         
         (recur (+ time-elapsed increment) retry)) 
-      (not failedTest)))) ;eventually returns whether the test passed
+      (not failedTest))))
 
 (deftest server-test
   (let [port 5000]

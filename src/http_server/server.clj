@@ -4,7 +4,7 @@
            (java.net ServerSocket))
   (:gen-class))
 
-(defn respond-to-request [socket] 
+(defn- respond-to-request [socket] 
   (let [client-socket (. socket accept)
         in (BufferedReader. (InputStreamReader. (.getInputStream client-socket)))
         out (BufferedWriter. (OutputStreamWriter. (.getOutputStream client-socket)))]

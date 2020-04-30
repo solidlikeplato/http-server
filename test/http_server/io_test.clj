@@ -44,4 +44,3 @@
         (socket-write writer message2))
 
       (is (= (str message message2) (.toString output))))))
-      

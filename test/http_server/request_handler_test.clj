@@ -13,11 +13,10 @@
             in (new BufferedReader (new InputStreamReader input))
             output (new ByteArrayOutputStream)
             out (new BufferedWriter (new OutputStreamWriter output))
-            empty-response (generate-response-header "")]
+            empty-response "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:0\r\n\r\n"]
         
         (with-open [reader in
                     writer out]
           (make-response reader writer))
         
         (is (= empty-response (.toString output))))))
-        

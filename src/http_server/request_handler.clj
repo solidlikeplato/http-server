@@ -5,8 +5,5 @@
 
 (defn make-response [in out]
   (let [request (socket-read in)
-        response (generate-response-header "")
-        ; response (get-response request)
-        ]
+        response "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:0\r\n\r\n"]
         (socket-write out response)))
-        
