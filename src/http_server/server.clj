@@ -10,7 +10,7 @@
         out (BufferedWriter. (OutputStreamWriter. (.getOutputStream client-socket)))]
       (with-open [reader in
                   writer out]
-        (make-response reader writer))
+        (process-request reader writer))
     (.close client-socket)))
 
 (defn server [port]

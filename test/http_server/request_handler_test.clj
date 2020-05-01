@@ -17,6 +17,20 @@
         
         (with-open [reader in
                     writer out]
-          (make-response reader writer))
+          (process-request reader writer))
+        
+        (is (= empty-response (.toString output)))))
+        
+    (testing "responds to request to /simple_get_with_body with 200 and 'Hello world"
+      (let [request "GET /simple_get_with_body HTTP/1.1\r\n\r\n"
+            input (new ByteArrayInputStream (bytes (byte-array (map byte request))))
+            in (new BufferedReader (new InputStreamReader input))
+            output (new ByteArrayOutputStream)
+            out (new BufferedWriter (new OutputStreamWriter output))
+            empty-response "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:11\r\n\r\nHello world"]
+        
+        (with-open [reader in
+                    writer out]
+          (process-request reader writer))
         
         (is (= empty-response (.toString output))))))
