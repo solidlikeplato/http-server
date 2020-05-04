@@ -22,7 +22,7 @@
         (is (= empty-response (.toString output)))))
         
     (testing "responds to request to /simple_get_with_body with 200 and 'Hello world"
-      (let [request "GET /simple_get_with_body HTTP/1.1\r\n\r\n"
+      (let [request "GET /simple_get_with_body HTTP/1.1\r\nHost: developer.mozilla.org\r\n\r\n"
             input (new ByteArrayInputStream (bytes (byte-array (map byte request))))
             in (new BufferedReader (new InputStreamReader input))
             output (new ByteArrayOutputStream)

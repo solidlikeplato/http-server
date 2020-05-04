@@ -3,13 +3,22 @@
             [http_server.parse_request :refer :all])
   (:gen-class))
 
-(defn make-empty-body-response [out]
-  (let [response "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:0\r\n\r\n"]
-        (socket-write out response)))
+(defn get-response [request]
+  (let [method (request :method)
+        uri (request :uri)
+        _body (request :body)]
+    (cond
+      (= method "GET") 
+        (cond 
+          (and (= method "GET") (= uri "/simple_get"))
+          "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:0\r\n\r\n"
 
-(defn respond [out method uri body]
-  (make-empty-body-response out))
+          (and (= method "GET") (= uri "/simple_get_with_body"))
+          "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:11\r\n\r\nHello world"))))
+
+(defn send-response [out request]
+  (socket-write out (get-response request)))
 
 (defn process-request [in out]
   (let [request (parse-request in)]
-    (respond out (request :method "GET") (request :uri "/simple_get") (request :body ""))))
+    (send-response out request)))
